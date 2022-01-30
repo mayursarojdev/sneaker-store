@@ -1,4 +1,5 @@
 // DOM
+const $navBottom = document.querySelector(".nav__bottom");
 const $slider = document.querySelector(".slider__wrapper");
 const $menuItems = document.querySelectorAll(".nav__menu-item");
 const $currentProductImg = document.querySelector(".product__img");
@@ -172,6 +173,18 @@ $menuItems.forEach((item, idx) => {
     currentProduct = products[idx];
     updateProduct(currentProduct);
   });
+});
+
+// fixed nav menu
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 120) {
+    $navBottom.classList.add("fixed-top", "nav__bottom-fixed");
+    const navBottomHeight = $navBottom.offsetHeight;
+    document.body.style.paddingTop = `${navBottomHeight}px`;
+  } else {
+    $navBottom.classList.remove("fixed-top", "nav__bottom-fixed");
+    document.body.style.paddingTop = 0;
+  }
 });
 
 // set to default product on page load
