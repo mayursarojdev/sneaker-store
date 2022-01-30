@@ -228,6 +228,7 @@ body {
   align-items: center;
   justify-content: space-evenly;
   padding: 9rem;
+  padding-bottom: 14rem;
 }
 
 .features__item {
