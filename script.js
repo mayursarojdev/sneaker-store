@@ -125,7 +125,7 @@ function changeProductVariantImg(productVariantImg) {
   $currentProductImg.src = productVariantImg;
 }
 
-function addVariantsListeners() {
+function addColorsListeners() {
   $currentProductColors = $currentProductVariants.querySelectorAll(".color");
 
   $currentProductColors.forEach((color, idx) => {
@@ -152,13 +152,16 @@ function addSizesListeners() {
   });
 }
 
+function addVariantsListeners() {
+  addColorsListeners();
+  addSizesListeners();
+}
+
 function updateProduct(product) {
   // change DOM with new product info
   changeProductDOM(product);
-  // add listeners to color varients
+  // add listeners for colors and sizes
   addVariantsListeners();
-  // add listeners to sizes
-  addSizesListeners();
 }
 
 // menu items event listener
