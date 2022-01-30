@@ -298,19 +298,20 @@ body {
 }
 
 .product__variants .color {
-  width: 3.8rem;
+  width: 3.5rem;
   height: 3.2rem;
   margin-right: 0.6rem;
   border: 1px solid black;
   border-radius: 0.5rem;
+  cursor: pointer;
 }
 
-.product__size {
+.product__sizes {
   display: flex;
   margin-bottom: 4rem;
 }
 
-.product__size .size {
+.product__sizes .size {
   padding: 0.5rem 2.5rem;
   margin-right: 0.6rem;
   border: 1px solid black;
@@ -319,7 +320,7 @@ body {
 
   cursor: pointer;
 }
-.product__size .size:hover {
+.product__sizes .size:hover {
   background: var(--black);
   color: var(--white);
 }
