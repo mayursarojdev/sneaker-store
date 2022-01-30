@@ -100,7 +100,7 @@ const products = [
 let currentProduct = products[0];
 
 // functions
-function changeProduct(product) {
+function changeProductDOM(product) {
   $currentProductImg.src = product.colors[0].img;
   $currentProductName.innerText = product.title;
   $currentProductPrice.innerText = `$${product.price}`;
@@ -121,13 +121,37 @@ function changeProduct(product) {
   $currentProductSizes.innerHTML = sizesHTML;
 }
 
+function changeProductVariantImg(productVariantImg) {
+  $currentProductImg.src = productVariantImg;
+}
+
+function addVariantsListeners() {
+  $currentProductColors = $currentProductVariants.querySelectorAll(".color");
+
+  $currentProductColors.forEach((color, idx) => {
+    color.addEventListener("click", () => {
+      const productVariantImg = currentProduct.colors[idx].img;
+      changeProductVariantImg(productVariantImg);
+    });
+  });
+}
+
+function updateProduct(product) {
+  // change DOM with new product info
+  changeProductDOM(product);
+  // add listeners to color varients
+  addVariantsListeners();
+}
+
+// event listsners for menu items
 $menuItems.forEach((item, idx) => {
   item.addEventListener("click", () => {
     $slider.style.transform = `translateX(-${idx * 100}vw)`;
-    // change current product
-    changeProduct(products[idx]);
+    // change current product and product DOM
+    currentProduct = products[idx];
+    updateProduct(currentProduct);
   });
 });
 
 // set to default product on page load
-changeProduct(currentProduct);
+updateProduct(currentProduct);
