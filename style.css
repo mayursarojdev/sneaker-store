@@ -8,6 +8,12 @@
 
   --white: #ffffffe8;
   --black: #000000e5;
+
+  --slider1Bg: #369e62;
+  --slider2Bg: rebeccapurple;
+  --slider3Bg: teal;
+  --slider4Bg: cornflowerblue;
+  --slider5Bg: #7c7350;
 }
 
 html {
@@ -59,8 +65,8 @@ body {
   font-size: 1.4rem;
 }
 
-.nav__search input::placeholder{
-  color: var(--light)
+.nav__search input::placeholder {
+  color: var(--light);
 }
 
 .nav_offer a {
@@ -95,4 +101,115 @@ body {
   cursor: pointer;
 }
 
+.slider {
+  padding-top: 3rem;
+  background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 85%);
+}
 
+.slider__wrapper {
+  width: 500vw;
+  display: flex;
+}
+
+.slider__item {
+  position: relative;
+
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  justify-content: center;
+  color: var(--white);
+}
+
+.slider__item-img {
+  z-index: 1;
+}
+
+.slider__item-bg {
+  position: absolute;
+  z-index: 0;
+  top: 48%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+
+  width: 750px;
+  height: 750px;
+  border-radius: 50%;
+}
+
+.slider__item:nth-child(1) .slider__item-bg {
+  background: var(--slider1Bg);
+}
+.slider__item:nth-child(2) .slider__item-bg {
+  background: var(--slider2Bg);
+}
+.slider__item:nth-child(3) .slider__item-bg {
+  background: var(--slider3Bg);
+}
+.slider__item:nth-child(4) .slider__item-bg {
+  background: var(--slider4Bg);
+}
+.slider__item:nth-child(5) .slider__item-bg {
+  background: var(--slider5Bg);
+}
+
+.slider__item-price {
+  position: absolute;
+  z-index: 1;
+  top: 10rem;
+  left: 11rem;
+
+  padding: 0.4rem;
+  border: 1px solid var(--white);
+
+  font-size: 5rem;
+  font-weight: 300;
+}
+
+.slider__item-name {
+  position: absolute;
+  z-index: 1;
+  top: 15rem;
+  right: 8rem;
+
+  text-transform: uppercase;
+  font-size: 6.3rem;
+  font-weight: 900;
+  text-align: center;
+}
+
+.slider__item-name span {
+  display: inline-block;
+  margin: 0.1rem;
+  padding: 0px 15px;
+
+  background: var(--white);
+  color: var(--black);
+}
+
+.slider__item-cta {
+  position: absolute;
+  z-index: 1;
+  top: 43rem;
+  right: 18rem;
+
+  padding: 1rem 2.5rem;
+  border: none;
+  border: 1px solid var(--white);
+
+  background: var(--primary);
+  color: var(--white);
+
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+.slider__item-cta:hover {
+  border: 1px solid var(--black);
+
+  background: var(--ter3);
+  color: var(--black);
+}
