@@ -301,10 +301,10 @@ body {
 
 .product__variants .color {
   width: 3.5rem;
-  height: 3.2rem;
+  height: 3.5rem;
   margin-right: 0.6rem;
   border: 1px solid black;
-  border-radius: 0.5rem;
+  border-radius: 100%;
   cursor: pointer;
 }
 
