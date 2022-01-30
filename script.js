@@ -136,14 +136,32 @@ function addVariantsListeners() {
   });
 }
 
+function addSizesListeners() {
+  $currentProductAvailableSizes =
+    $currentProductSizes.querySelectorAll(".size");
+
+  $currentProductAvailableSizes.forEach(($size, idx) => {
+    $size.addEventListener("click", () => {
+      // remove active class from all sizes
+      $currentProductAvailableSizes.forEach(($size) => {
+        $size.classList.remove("active");
+      });
+      // add active class to selected size
+      $size.classList.add("active");
+    });
+  });
+}
+
 function updateProduct(product) {
   // change DOM with new product info
   changeProductDOM(product);
   // add listeners to color varients
   addVariantsListeners();
+  // add listeners to sizes
+  addSizesListeners();
 }
 
-// event listsners for menu items
+// menu items event listener
 $menuItems.forEach((item, idx) => {
   item.addEventListener("click", () => {
     $slider.style.transform = `translateX(-${idx * 100}vw)`;

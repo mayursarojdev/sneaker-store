@@ -322,6 +322,11 @@ body {
 
   cursor: pointer;
 }
+.product__sizes .size.active {
+  background: var(--black);
+  color: var(--white);
+}
+
 .product__sizes .size:hover {
   background: var(--black);
   color: var(--white);
