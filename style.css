@@ -8,6 +8,7 @@
 
   --white: #ffffffe8;
   --black: #000000e5;
+  --grey: grey;
 
   --slider1Bg: #369e62;
   --slider2Bg: rebeccapurple;
@@ -51,7 +52,7 @@ body {
   border-radius: 0.8rem;
   width: 25%;
 
-  background-color: gray;
+  background-color: var(--grey);
 }
 
 .nav__search input {
@@ -101,6 +102,7 @@ body {
   cursor: pointer;
 }
 
+/* slider */
 .slider {
   padding-top: 3rem;
   background: url("https://images.unsplash.com/photo-1604147495798-57beb5d6af73?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2370&q=80");
@@ -214,4 +216,41 @@ body {
 
   background: var(--ter3);
   color: var(--black);
+}
+
+/* features */
+
+.features {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 5rem;
+}
+
+.features__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+.features__item h3 {
+  margin: 1.5rem 2rem;
+
+  font-size: 2rem;
+}
+
+.features__item p {
+  width: 50%;
+
+  color: var(--grey);
+
+  font-size: 1.6rem;
+}
+
+.features__item img {
+  width: 5rem;
+  height: 5rem;
 }
