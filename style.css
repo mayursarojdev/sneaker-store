@@ -292,6 +292,8 @@ body {
   font-size: 7rem;
   font-weight: 800;
   margin-bottom: 5rem;
+
+  text-transform: uppercase;
 }
 
 .product__price {
