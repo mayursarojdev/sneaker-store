@@ -301,22 +301,35 @@ body {
 }
 
 .product__description {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
   color: var(--grey);
   font-size: 1.7rem;
 }
 .product__variants {
   display: flex;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .product__variants .color {
   width: 3.5rem;
   height: 3.5rem;
-  margin-right: 0.6rem;
-  border: 1px solid black;
+  margin-right: 1rem;
   border-radius: 100%;
+  border: 1px solid;
   cursor: pointer;
+  position: relative;
+}
+.product__variants .color.active::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 4rem;
+  height: 4rem;
+  border: 3px solid black;
+  border-radius: 100%;
+  transform: translate(-50%, -50%);
 }
 
 .product__sizes {

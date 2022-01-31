@@ -108,8 +108,10 @@ function changeProductDOM(product) {
   $currentProductDesc.innerText = product.desc;
   // creating variants
   let colorsHTML = ``;
-  product.colors.forEach((color) => {
-    colorsHTML += `<div class="color" style='background-color:${color.code}'></div>`;
+  product.colors.forEach((color, idx) => {
+    colorsHTML += `<div class="color ${
+      idx === 0 ? "active" : ""
+    }" style='background-color:${color.code}'></div>`;
   });
 
   // creating sizes
@@ -129,8 +131,13 @@ function changeProductVariantImg(productVariantImg) {
 function addColorsListeners() {
   $currentProductColors = $currentProductVariants.querySelectorAll(".color");
 
-  $currentProductColors.forEach((color, idx) => {
-    color.addEventListener("click", () => {
+  $currentProductColors.forEach(($color, idx) => {
+    $color.addEventListener("click", () => {
+      // change color control
+      $currentProductColors.forEach(($col) => {
+        $col.classList.remove("active");
+        if ($col == $color) $col.classList.add("active");
+      });
       const productVariantImg = currentProduct.colors[idx].img;
       changeProductVariantImg(productVariantImg);
     });
