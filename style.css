@@ -314,8 +314,8 @@ body {
 }
 
 .product__variants .color {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 2.8rem;
+  height: 2.8rem;
   margin-right: 1rem;
   border-radius: 100%;
   border: 1px solid;
@@ -328,9 +328,9 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 4rem;
-  height: 4rem;
-  border: 3px solid black;
+  width: 3.2rem;
+  height: 3.2rem;
+  border: 3px solid var(--secondary);
   border-radius: 100%;
   transform: translate(-50%, -50%);
 }
