@@ -377,3 +377,23 @@ body {
   border: 2px solid var(--black);
   color: var(--black);
 }
+
+/* gallary */
+.gallary {
+  display: flex;
+  padding: 6rem;
+}
+
+.gallary__item {
+  flex: 1;
+  padding: 4.5rem;
+}
+
+.gallary__img {
+  width: 100%;
+}
+
+.gallary__title {
+  margin: 2.5rem 0;
+  font-size: 3.2rem;
+}
